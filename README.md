@@ -20,6 +20,8 @@ I work with "<b>pdfplumber/pdfminer</b>" none OCR, so its very fast!<br>
 <li>All txt files will be created in original folder of PDF</li>
 <li>All txt files will be overwritten</li>
 </ul>
+exe files aviable here: <br>
+https://huggingface.co/kalle07/pdf2txt_parser_converter
 <br>
 This I have created with my brain and the help of chatGPT, Iam not a coder... sorry so I will not fulfill any wishes unless there are real errors.<br>
 It is really hard for me with GUI and the Function and in addition to compile it.<br>
