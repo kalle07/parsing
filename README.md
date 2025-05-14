@@ -31,7 +31,7 @@ I also have a "<b>docling</b>" parser with OCR (GPU is need for fast processing)
 You have to download all libs, and if you start (first time) internal also OCR models are downloaded. At the moment i have prepared a kind of multi docling, 
 the number of parallel processes depend on VRAM and if you use OCR only for tables or for all. I have set VRAM = 16GB (my GPU RAM, you should set yours) and the multiple calls for docling are VRAM/1.3, 
 so it uses ~12GB (in my version) and processes 12 PDFs at once, only txt and tables are converted, so no images no diagrams. For now all PDFs must be same folder like the python file. 
-If you change OCR for all the VRAM consum is rasing you hace to set 1.3 to 2 or more.
+If you change OCR for all the VRAM consum is rasing you have to set 1.3 to 2 or more.
 <br><br>
 
 <b>now have fun and leave a comment if you like  ;)</b><br>
