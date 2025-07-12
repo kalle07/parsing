@@ -1,7 +1,7 @@
 # parsing
 only for advanced users
 
-# <b>PDF to TXT converter ready to chunck for your RAG</b>
+# <b>PDF to TXT converter ready to chunk for your RAG</b>
 <b>ONLY WINDOWS</b><br>
 <b>EXE and PY available (en and german)</b><br>
 
