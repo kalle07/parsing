@@ -7,6 +7,12 @@ only for advanced users
 
 <b>&#x21e8;</b> give me a ❤️, if you like  ;)<br><br>
 
+
+<img width="1232" height="991" alt="grafik" src="https://github.com/user-attachments/assets/e6596e77-52cb-45c6-9666-3a360d75a38e" />
+<br>
+
+
+
 Most LLM applications only convert your PDF simple to txt, nothing more, its like you save your PDF as txt file. Often textblocks are mixed and tables not readable.
 Therefore its better to convert it with some help of a <b>parser</b>.<br>
 I work with "<b>pdfplumber/pdfminer</b>" none OCR, so its very fast!<br>
