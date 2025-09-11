@@ -3,10 +3,12 @@ only for advanced users
 
 # <b>PDF to TXT converter ready to chunk for your RAG</b>
 <b>ONLY WINDOWS</b><br>
-<b>EXE and PY available (en and german)</b><br>
+<b>EXE and PY available (en)</b><br>
 
 <b>&#x21e8;</b> give me a ❤️, if you like  ;)<br><br>
 
+newest: PDF Parser - Sevenof9_v7d.py (exe on huggingface, see below)
+<br>
 
 <img width="1232" height="991" alt="grafik" src="https://github.com/user-attachments/assets/e6596e77-52cb-45c6-9666-3a360d75a38e" />
 <br>
