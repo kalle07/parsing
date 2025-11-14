@@ -21,16 +21,17 @@ newest: PDF Parser - Sevenof9_v7e.py (exe on huggingface, see below)
 
 Most LLM applications only convert your PDF simple to txt, nothing more, its like you save your PDF as txt file. Often textblocks are mixed and tables not readable.
 Therefore its better to convert it with some help of a <b>parser</b>.<br>
-I work with "<b>pdfplumber/pdfminer</b>" none OCR, so its very fast!<br>
+I work with "<b>pdfplumber/pdfminer</b>" none OCR(no images) and the PDF must be copyable text, so its fast!<br>
 <ul style="line-height: 1.05;">
 <li>Works with single and multi pdf list, works with folder</li>
-<li>Intelligent multiprocessing</li>
+<li>Intelligent multiprocessing ~10-20 pages per second</li>
 <li>Error tolerant, that means if your PDF is not convertible, it will be skipped, no special handling</li>
 <li>Instant view of the result, hit one pdf on top of the list</li>
 <li>Converts some common tables as json inside the txt file</li>
 <li>It adds the absolute PAGE number to each page</li>
-<li>All txt files will be created in original folder of PDF</li>
+<li>All txt files will be created in original folder of PDF, same nane as *.txt</li>
 <li>All txt files will be overwritten</li>
+<li>I advise against using a PDF file directly for RAG formatting (embedding), as you never know how it will look, and incorrect input can lead to poor results.</li>
 </ul>
 
 <br>
