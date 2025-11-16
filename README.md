@@ -31,6 +31,7 @@ I work with "<b>pdfplumber/pdfminer</b>" none OCR(no images) and the PDF must be
 <li>It adds the absolute PAGE number to each page</li>
 <li>All txt files will be created in original folder of PDF, same nane as *.txt</li>
 <li>All txt files will be overwritten</li>
+<li>If there are many text blocks on a page, it may be that text blocks that you would read first appear further down the page. (It is a compromise between many layout options.)</li>
 <li>I advise against using a PDF file directly for RAG formatting (embedding), as you never know how it will look, and incorrect input can lead to poor results.</li>
 </ul>
 
