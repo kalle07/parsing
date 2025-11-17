@@ -1,6 +1,6 @@
 # parsing
 only for advanced users<br>
-update: 11/25, cleaner lines (much better handling with hyphen, will be merged on line-end), faster word to text-block algorithm ~20% faster at all.
+update: 11/25 <b>PDF_Parser-Sevenof9_v7f</b>, cleaner lines (much better handling with hyphen, will be merged on line-end), faster word to text-block algorithm ~20% faster at all.
 
 # <b>PDF to TXT converter ready to chunk for your RAG</b>
 <b>ONLY WINDOWS</b><br>
@@ -11,7 +11,7 @@ https://huggingface.co/kalle07/pdf2txt_parser_converter
 
 <b>&#x21e8;</b> give me a ❤️, if you like  ;)<br><br>
 
-newest: PDF Parser - Sevenof9_v7e.py (exe on huggingface, see below)
+newest: PDF Parser - Sevenof9_v7f.py (exe on relases -> right side)
 <br>
 
 <img width="1232" height="991" alt="grafik" src="https://github.com/user-attachments/assets/e6596e77-52cb-45c6-9666-3a360d75a38e" />
