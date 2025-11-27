@@ -52,6 +52,8 @@ If you change OCR for all the VRAM consum is rasing you have to set 1.3 to 2 or 
 <b>now have fun and leave a comment if you like  ;)</b><br>
 on discord "sevenof9"
 <br>
+my raw-txt-snippet extractor<br>
+https://github.com/kalle07/raw-txt-snippet-creator
 my embedder collection:<br>
 https://huggingface.co/kalle07/embedder_collection
 
