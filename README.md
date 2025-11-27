@@ -5,13 +5,13 @@ update: 11/25 <b>PDF_Parser-Sevenof9_v7f</b>, cleaner lines (much better handlin
 # <b>PDF to TXT converter ready to chunk for your RAG</b>
 <b>ONLY WINDOWS</b><br>
 <b>EXE and PY available (en)</b><br>
-exe files aviable here: <br>
+exe files aviable on hugging (or relases -> right side): <br>
 https://huggingface.co/kalle07/pdf2txt_parser_converter
 <br>
 
 <b>&#x21e8;</b> give me a ❤️, if you like  ;)<br><br>
 
-newest: PDF Parser - Sevenof9_v7f.py (exe on relases -> right side)
+newest: <b>PDF Parser - Sevenof9_v7f.py</b>
 <br>
 
 <img width="1232" height="991" alt="grafik" src="https://github.com/user-attachments/assets/e6596e77-52cb-45c6-9666-3a360d75a38e" />
@@ -21,18 +21,20 @@ newest: PDF Parser - Sevenof9_v7f.py (exe on relases -> right side)
 
 Most LLM applications only convert your PDF simple to txt, nothing more, its like you save your PDF as txt file. Often textblocks are mixed and tables not readable.
 Therefore its better to convert it with some help of a <b>parser</b>.<br>
-I work with "<b>pdfplumber/pdfminer</b>" none OCR(no images) and the PDF must be copyable text, so its fast!<br>
+I work with "<b>pdfplumber/pdfminer</b>" none OCR(no images) and the PDF must contain copyable text.<br>
 <ul style="line-height: 1.05;">
-<li>Works with single and multi pdf list, works with folder</li>
+<li>Works with single and multi PDF list, works with folder</li>
 <li>Intelligent multiprocessing ~10-20 pages per second</li>
 <li>Error tolerant, that means if your PDF is not convertible, it will be skipped, no special handling</li>
 <li>Instant view of the result, hit one pdf on top of the list</li>
+<li>Removes about 5% of the margins around the page</li>
 <li>Converts some common tables as json inside the txt file</li>
-<li>It adds the absolute PAGE number to each page</li>
+<li>Add the absolute PAGE number to each page</li>
 <li>All txt files will be created in original folder of PDF, same nane as *.txt</li>
-<li>All txt files will be overwritten</li>
-<li>If there are many text blocks on a page, it may be that text blocks that you would read first appear further down the page. (It is a compromise between many layout options.)</li>
-<li>I advise against using a PDF file directly for RAG formatting (embedding), as you never know how it will look, and incorrect input can lead to poor results.</li>
+<li>All txt files will be overwritten if you start converting with same PDF</li>
+<li>If there are many text blocks on a page, it may be that text blocks that you would read first appear further down the page. (It is a compromise between many layout options)</li>
+<li>Small blocks of text (such as units or individual numbers), usually near diagrams and sketches, appear at the end of each page</li>
+<li>I advise against using a PDF file directly for RAG formatting (embedding), as you never know how it will look, and incorrect input can lead to poor results</li>
 </ul>
 
 <br>
