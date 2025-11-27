@@ -36,6 +36,7 @@ I work with "<b>pdfplumber/pdfminer</b>" none OCR(no images) and the PDF must co
 <li>If there are many text blocks on a page, it may be that text blocks that you would read first appear further down the page. (It is a compromise between many layout options)</li>
 <li>Small blocks of text (such as units or individual numbers), usually near diagrams and sketches, appear at the end of each page</li>
 <li>I advise against using a PDF file directly for RAG formatting (embedding), as you never know how it will look, and incorrect input can lead to poor results</li>
+<li>tested on 300 PDF files ~30000 pages</li>
 </ul>
 
 <br>
