@@ -30,7 +30,8 @@ I work with "<b>pdfplumber/pdfminer</b>" none OCR(no images) and the PDF must co
 <li>Removes about 5% of the margins around the page</li>
 <li>Converts some common tables as json inside the txt file</li>
 <li>Add the absolute PAGE number to each page</li>
-<li>All txt files will be created in original folder of PDF, same nane as *.txt</li>
+<li>Add the tag “chapter” or “important” to large and/or bold font.</li>
+<li>All txt files will be created in original folder of PDF, same name as *.txt</li>
 <li>All txt files will be overwritten if you start converting with same PDF</li>
 <li>If there are many text blocks on a page, it may be that text blocks that you would read first appear further down the page. (It is a compromise between many layout options)</li>
 <li>Small blocks of text (such as units or individual numbers), usually near diagrams and sketches, appear at the end of each page</li>
