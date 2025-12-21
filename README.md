@@ -1,5 +1,5 @@
-# parsing
-only for advanced users<br>
+# parsing / pdf parser
+with GUI<br>
 update: 11/25 <b>PDF_Parser-Sevenof9_v7f</b>, cleaner lines (much better handling with hyphen, will be merged on line-end), faster word to text-block algorithm ~20% faster at all.
 
 # <b>PDF to TXT converter ready to chunk for your RAG</b>
@@ -40,7 +40,7 @@ I work with "<b>pdfplumber/pdfminer</b>" none OCR(no images) and the PDF must co
 </ul>
 
 <br>
-This I have created with my brain and the help of chatGPT, Iam not a coder... sorry so I will not fulfill any wishes unless there are real errors.<br>
+This I have created with my brain and the help of Ai, Iam not a coder... sorry so I will not fulfill any wishes unless there are real errors.<br>
 It is really hard for me with GUI and the Function and in addition to compile it.<br>
 For the python-file oc you need to import missing libraries.<br>
 <br>
@@ -55,7 +55,7 @@ If you change OCR for all the VRAM consum is rasing you have to set 1.3 to 2 or 
 on discord "sevenof9"
 <br>
 my raw-txt-snippet extractor<br>
-https://github.com/kalle07/raw-txt-snippet-creator
+https://github.com/kalle07/raw-txt-snippet-creator<br>
 my embedder collection:<br>
 https://huggingface.co/kalle07/embedder_collection
 
