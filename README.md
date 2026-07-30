@@ -8,10 +8,10 @@ Check the PDF before converting it to text: go to any page, ideally one at the b
 
 	This is a REFACTOR version (modular, maintainable, parallel-ready)
 
-• The generated TXT file has the same name as the PDF file.
-• The TXT file and media folders with images/drawings are created in the same directory.
-• Older TXT files will be overwritten without prompting.
-• When selecting a folder, all .pdf files inside it (non-hidden) are processed.
+• The generated TXT file has the same name as the PDF file.<br>
+• The TXT file and a media folder with images/drawings are created in the same directory.<br>
+• Older TXT files will be overwritten without prompting.<br>
+• When selecting a folder, all .pdf files inside it (non-hidden) are processed.<br>
 
 # <b>PDF to TXT converter ready to chunk for your RAG</b>
 <b>EXE- ONLY WINDOWS</b><br>
