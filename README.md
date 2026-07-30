@@ -1,7 +1,17 @@
 # parsing / pdf parser
-with GUI<br>
+with a nice old style GUI -> have FUN !!!<br>
 update: 03/26 <b>PDF_Parser-Sevenof9_v7i</b>, again 25% faster through page chunking for each core<br>
 Check the PDF before converting it to text: go to any page, ideally one at the beginning and one at the end, select the text with the mouse and copy it into an editor (can you see what you copied?)... if that doesn't work, this parser won't work and neither will any other simple program! To do this, you must remove the copy protection, or the page is just an image and you must use OCR first.<br>
+
+	PDF to TXT Converter — Layout Focus & Table/JSON & Media Extraction
+	Refactored class-based architecture with multiprocessing support
+
+	This is a REFACTOR version (modular, maintainable, parallel-ready)
+
+• The generated TXT file has the same name as the PDF file.
+• The TXT file and media folders with images/drawings are created in the same directory.
+• Older TXT files will be overwritten without prompting.
+• When selecting a folder, all .pdf files inside it (non-hidden) are processed.
 
 # <b>PDF to TXT converter ready to chunk for your RAG</b>
 <b>EXE- ONLY WINDOWS</b><br>
@@ -12,33 +22,69 @@ https://huggingface.co/kalle07/pdf2txt_parser_converter
 
 <b>&#x21e8;</b> give me a ❤️, if you like  ;)<br><br>
 
-newest: <b>PDF Parser - Sevenof9_v7i.py</b>
+newest: <b>PDF Parser by Kall07 </b>
 <br>
 
-<img width="1232" height="991" alt="grafik" src="https://github.com/user-attachments/assets/e6596e77-52cb-45c6-9666-3a360d75a38e" />
+<img width="1179" height="888" alt="grafik" src="https://github.com/user-attachments/assets/4a6e750f-2ddc-4711-b5a4-30c480f75b77" />
+
 <br>
 
 
 
 Most LLM applications only convert your PDF simple to txt, nothing more, its like you save your PDF as txt file. Often textblocks are mixed and tables not readable.
 Therefore its better to convert it with some help of a <b>parser</b>.<br>
-I work with "<b>pdfplumber/pdfminer</b>" none OCR(no images) and the PDF must contain copyable text.<br>
-<ul style="line-height: 1.05;">
-<li>Works with single and multi PDF list, works with folder</li>
-<li>Intelligent multiprocessing ~10-30 pages per second</li>
-<li>Error tolerant, that means if your PDF is not convertible, it will be skipped, no special handling</li>
-<li>Instant view of the result, hit one pdf on top of the list</li>
-<li>Removes about 5% of the margins around the page</li>
-<li>Converts some common tables as json inside the txt file</li>
-<li>Add the absolute PAGE number to each page</li>
-<li>Add the tag “chapter” or “important” to large and/or bold font.</li>
-<li>All txt files will be created in original folder of PDF, same name as *.txt</li>
-<li>All txt files will be overwritten if you start converting with same PDF</li>
-<li>If there are many text blocks on a page, it may be that text blocks that you would read first appear further down the page. (It is a compromise between many layout options)</li>
-<li>Small blocks of text (such as units or individual numbers), usually near diagrams and sketches, appear at the end of each page</li>
-<li>I advise against using a PDF file directly for RAG formatting (embedding), as you never know how it will look, and incorrect input can lead to poor results</li>
-<li>tested on 300 PDF files ~30000 pages</li>
-</ul>
+Right-click options:
+• You can remove or open the source/converted PDF by right-clicking on it.
+
+Status indicators after processing:
+If:
+[INFO] File completed: TEST.pdf (X pages)!
+[INFO] Processing completed
+-> This only means all pages were processed; image/drawing/table quality is not guaranteed.
+-> If you cannot select and copy the text from the PDF, this program will produce poor results.
+-> No OCR or AI-based recognition — pure pymupdf extraction only.
+-> No formulas
+
+Layout & Content Rules:
+• An attempt is made to reproduce page layout in columns (left → right) and blocks (top → bottom).
+• Two common types of tables with detectable structure are extracted; headers are assigned and stored as JSON inside the TXT file.
+• Adds "Page X of Y" label at the beginning of every processed page.
+
+Image/Drawings Extraction:
+• Images below 100 px on any side are skipped by default (adjustable via config).
+• Full-page images (≥80% of page size) are excluded — likely background/scan artifacts.
+• Images overlapping >90% with a similarly-sized text block or table are skipped.
+• Max 10 media items per page to prevent cluttered output.
+
+Drawing Extraction:
+• A "drawing" requires at least 10 drawing rectangles clustered together (configurable via min_items_per_cluster).
+• Small text blocks near drawings may be merged into the cluster for context but do NOT count toward the minimum.
+• Drawings are saved with padding around their bounding box for visual clarity.
+
+Margin & Overlap Protection:
+• Content whose center falls within outer margins is skipped (configurable thresholds per side).
+• Tables take precedence — text blocks and drawings overlapping a table area by >90% are discarded.
+• Images vs Drawings conflict resolution keeps the larger item; smaller one is logged as skipped.
+
+Post-Processing Mode:
+• First: describe all images and drawings oc with help of Ai (Suggestion: LFM2.5-VL-1.6B)
+• This second pass reads existing text files with-in pdf media-folder same name as the PDF and injects a description field alongside each image/drawing JSON block.
+example: testfile_page_0003_img_02.png -> testfile_page_0003_img_02.txt
+
+Stop function becomes effective only after the currently processed file finishes its page chunk.
+
+When processing large amounts of data, the following should be noted:
+1. All PDFs are opened once by PDFValidator to determine validity, protection status, and page count.
+2. Files with fewer than 32 pages run in parallel — one core per file (up to available cores).
+3. Large files (≥32 pages) are split into chunks of ~8 pages per core.
+4. Each page runs inside a separate ProcessPoolExecutor worker, fully isolated with its own ConversionConfig copy.
+5. Results from all workers are collected and assembled in original page order before writing the final TXT file.
+6. Speed: 8 cores  ~50 pages / sec
+
+...
+https://github.com/kalle07/pdf2txt-parser
+
+
 
 <br>
 This I have created with my brain and the help of Ai, Iam not a coder... sorry so I will not fulfill any wishes unless there are real errors.<br>
@@ -49,7 +95,7 @@ INSTALL:<br>
 python -m venv venv<br>
 venv\Scripts\activate  # On Windows<br>
 pip install -r requirements.txt<br>
-python version_xyz.py<br><br>
+python main.py<br><br>
 
 
 <b>now have fun and leave a comment if you like  ;)</b><br>
