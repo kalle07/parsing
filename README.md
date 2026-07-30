@@ -32,7 +32,7 @@ newest: <b>PDF Parser by Kall07 </b>
 
 
 Most LLM applications only convert your PDF simple to txt, nothing more, its like you save your PDF as txt file. Often textblocks are mixed and tables not readable.
-Therefore its better to convert it with some help of a <b>parser</b>.<br><b>
+Therefore its better to convert it with some help of a <b>parser</b>.<br><br>
 Right-click options:<br>
 • You can remove or open the source/converted PDF by right-clicking on it.<br><br>
 
