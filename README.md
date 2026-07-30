@@ -1,6 +1,6 @@
 # parsing / pdf parser
 with a nice old style GUI -> have FUN !!!<br>
-update: 03/26 <b>PDF_Parser-Sevenof9_v7i</b>, again 25% faster through page chunking for each core<br>
+update: 08/26 <b>PDF_Parser-by-Kalle07-v8a</b><br>
 Check the PDF before converting it to text: go to any page, ideally one at the beginning and one at the end, select the text with the mouse and copy it into an editor (can you see what you copied?)... if that doesn't work, this parser won't work and neither will any other simple program! To do this, you must remove the copy protection, or the page is just an image and you must use OCR first.<br>
 
 	PDF to TXT Converter — Layout Focus & Table/JSON & Media Extraction
