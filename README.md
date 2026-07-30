@@ -32,57 +32,57 @@ newest: <b>PDF Parser by Kall07 </b>
 
 
 Most LLM applications only convert your PDF simple to txt, nothing more, its like you save your PDF as txt file. Often textblocks are mixed and tables not readable.
-Therefore its better to convert it with some help of a <b>parser</b>.<br>
-Right-click options:
-• You can remove or open the source/converted PDF by right-clicking on it.
+Therefore its better to convert it with some help of a <b>parser</b>.<br><b>
+Right-click options:<br>
+• You can remove or open the source/converted PDF by right-clicking on it.<br><br>
 
-Status indicators after processing:
-If:
-[INFO] File completed: TEST.pdf (X pages)!
-[INFO] Processing completed
--> This only means all pages were processed; image/drawing/table quality is not guaranteed.
--> If you cannot select and copy the text from the PDF, this program will produce poor results.
--> No OCR or AI-based recognition — pure pymupdf extraction only.
--> No formulas
+Status indicators after processing:<br>
+If:<br>
+[INFO] File completed: TEST.pdf (X pages)!<br>
+[INFO] Processing completed<br>
+-> This only means all pages were processed; image/drawing/table quality is not guaranteed.<br>
+-> If you cannot select and copy the text from the PDF, this program will produce poor results.<br>
+-> No OCR or AI-based recognition — pure pymupdf extraction only.<br>
+-> No formulas<br><br>
 
-Layout & Content Rules:
-• An attempt is made to reproduce page layout in columns (left → right) and blocks (top → bottom).
-• Two common types of tables with detectable structure are extracted; headers are assigned and stored as JSON inside the TXT file.
-• Adds "Page X of Y" label at the beginning of every processed page.
+Layout & Content Rules:<br>
+• An attempt is made to reproduce page layout in columns (left → right) and blocks (top → bottom).<br>
+• Two common types of tables with detectable structure are extracted; headers are assigned and stored as JSON inside the TXT file.<br>
+• Adds "Page X of Y" label at the beginning of every processed page.<br><br>
 
-Image/Drawings Extraction:
-• Images below 100 px on any side are skipped by default (adjustable via config).
-• Full-page images (≥80% of page size) are excluded — likely background/scan artifacts.
-• Images overlapping >90% with a similarly-sized text block or table are skipped.
-• Max 10 media items per page to prevent cluttered output.
+Image/Drawings Extraction:<br>
+• Images below 100 px on any side are skipped by default (adjustable via config).<br>
+• Full-page images (≥80% of page size) are excluded — likely background/scan artifacts.<br>
+• Images overlapping >90% with a similarly-sized text block or table are skipped.<br>
+• Max 10 media items per page to prevent cluttered output.<br><br>
 
-Drawing Extraction:
-• A "drawing" requires at least 10 drawing rectangles clustered together (configurable via min_items_per_cluster).
-• Small text blocks near drawings may be merged into the cluster for context but do NOT count toward the minimum.
-• Drawings are saved with padding around their bounding box for visual clarity.
+Drawing Extraction:<br>
+• A "drawing" requires at least 10 drawing rectangles clustered together (configurable via min_items_per_cluster).<br>
+• Small text blocks near drawings may be merged into the cluster for context but do NOT count toward the minimum.<br>
+• Drawings are saved with padding around their bounding box for visual clarity.<br><br>
 
-Margin & Overlap Protection:
-• Content whose center falls within outer margins is skipped (configurable thresholds per side).
-• Tables take precedence — text blocks and drawings overlapping a table area by >90% are discarded.
-• Images vs Drawings conflict resolution keeps the larger item; smaller one is logged as skipped.
+Margin & Overlap Protection:<br>
+• Content whose center falls within outer margins is skipped (configurable thresholds per side).<br>
+• Tables take precedence — text blocks and drawings overlapping a table area by >90% are discarded.<br>
+• Images vs Drawings conflict resolution keeps the larger item; smaller one is logged as skipped.<br><br>
 
-Post-Processing Mode:
-• First: describe all images and drawings oc with help of Ai (Suggestion: LFM2.5-VL-1.6B)
-• This second pass reads existing text files with-in pdf media-folder same name as the PDF and injects a description field alongside each image/drawing JSON block.
-example: testfile_page_0003_img_02.png -> testfile_page_0003_img_02.txt
+Post-Processing Mode:<br>
+• First: describe all images and drawings oc with help of Ai (Suggestion: LFM2.5-VL-1.6B)<br>
+• This second pass reads existing text files with-in pdf media-folder same name as the PDF and injects a description field alongside each image/drawing JSON block.<br>
+example: testfile_page_0003_img_02.png -> testfile_page_0003_img_02.txt<br><br>
 
-Stop function becomes effective only after the currently processed file finishes its page chunk.
+Stop function becomes effective only after the currently processed file finishes its page chunk.<br><br>
 
-When processing large amounts of data, the following should be noted:
-1. All PDFs are opened once by PDFValidator to determine validity, protection status, and page count.
-2. Files with fewer than 32 pages run in parallel — one core per file (up to available cores).
-3. Large files (≥32 pages) are split into chunks of ~8 pages per core.
-4. Each page runs inside a separate ProcessPoolExecutor worker, fully isolated with its own ConversionConfig copy.
-5. Results from all workers are collected and assembled in original page order before writing the final TXT file.
-6. Speed: 8 cores  ~50 pages / sec
+When processing large amounts of data, the following should be noted:<br>
+1. All PDFs are opened once by PDFValidator to determine validity, protection status, and page count.<br>
+2. Files with fewer than 32 pages run in parallel — one core per file (up to available cores).<br>
+3. Large files (≥32 pages) are split into chunks of ~8 pages per core.<br>
+4. Each page runs inside a separate ProcessPoolExecutor worker, fully isolated with its own ConversionConfig copy.<br>
+5. Results from all workers are collected and assembled in original page order before writing the final TXT file.<br>
+6. Speed: 8 cores  ~50 pages / sec<br><br>
 
-...
-https://github.com/kalle07/pdf2txt-parser
+...<br>
+https://github.com/kalle07/pdf2txt-parser<br><br>
 
 
 
