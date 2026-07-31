@@ -36,6 +36,8 @@ newest: <b>PDF Parser by Kall07 </b>
 
 Most LLM applications only convert your PDF simple to txt, nothing more, its like you save your PDF as txt file. Often textblocks are mixed and tables not readable.
 Therefore its better to convert it with some help of a <b>parser</b>.<br><br>
+
+# Detailed description
 Right-click options:<br>
 • You can remove or open the source/converted PDF by right-clicking on it.<br><br>
 
@@ -95,7 +97,7 @@ This I have created with my brain and the help of Ai, Iam not a coder... sorry s
 It is really hard for me with GUI and the Function and in addition to compile it.<br>
 For the python-file oc you need to import missing libraries.<br>
 <br><br>
-INSTALL:<br>
+# INSTALL (download exe) or:<br>
 python -m venv venv<br>
 venv\Scripts\activate  # On Windows<br>
 pip install -r requirements.txt<br>
