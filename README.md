@@ -97,7 +97,8 @@ This I have created with my brain and the help of Ai, Iam not a coder... sorry s
 It is really hard for me with GUI and the Function and in addition to compile it.<br>
 For the python-file oc you need to import missing libraries.<br>
 <br><br>
-# INSTALL (download exe) or:<br>
+
+# INSTALL - (download exe) or
 python -m venv venv<br>
 venv\Scripts\activate  # On Windows<br>
 pip install -r requirements.txt<br>
