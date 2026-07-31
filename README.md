@@ -1,11 +1,16 @@
 # parsing / pdf parser
-with a nice old style GUI -> have FUN !!!<br>
-update: 08/26 <b>PDF_Parser-by-Kalle07-v8a</b><br>
+-> with a nice old style GUI -> have FUN !!!<br>
+-> update: 08/26 <b>PDF_Parser-by-Kalle07-v8a</b><br>
+<b>The PDF Parser is a high-performance desktop application for extracting text, images, drawings, and metadata from PDF documents. Built for speed with multi-core processing and batch conversion, it helps researchers, engineers, businesses, and developers convert large PDF collections into clean, searchable text while preserving valuable document information.<br>
+
+The parser can also save extracted images and vector drawings as separate files. Using an external application (eg: small VL model like LFM25), these images and drawings can be automatically described, and the generated descriptions can then be injected back into the main extracted text file. This creates enriched, AI-ready documents that combine the original PDF text with meaningful descriptions of visual content, making them ideal for search, indexing, accessibility, and retrieval-augmented generation (RAG) workflows. </b><br><br>
+
 Check the PDF before converting it to text: go to any page, ideally one at the beginning and one at the end, select the text with the mouse and copy it into an editor (can you see what you copied?)... if that doesn't work, this parser won't work and neither will any other simple program! To do this, you must remove the copy protection, or the page is just an image and you must use OCR first.<br><br>
 
 • The generated TXT file has the same name as the PDF file.<br>
-• The TXT file and a media folder with images/drawings are created in the same directory.<br>
-• Older TXT files will be overwritten without prompting.<br>
+• The TXT file and a (optional) media folder with images/drawings are created in the source directory.<br>
+• Two common types of tables are converted to JSON format (embedder readable)<br>
+• Older TXT and images files will be overwritten without prompting.<br>
 • When selecting a folder, all .pdf files inside it (non-hidden) are processed.<br>
 
 # <b>PDF to TXT converter ready to chunk for your RAG</b>
