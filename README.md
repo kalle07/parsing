@@ -1,6 +1,7 @@
 # parsing / pdf parser
 -> with a nice old style GUI -> have FUN !!!<br>
--> update: 08/26 <b>PDF_Parser-by-Kalle07-v8a</b><br><br>
+-> update: 08/26 <b>PDF_Parser-by-Kalle07-v8a</b><br>
+-> on right side releases: windows exe available !<br><br>
 <b>The PDF Parser is a high-performance desktop application for extracting text, images, drawings, and metadata from PDF documents. Built for speed with multi-core processing and batch conversion, it helps researchers, engineers, businesses, and developers convert large PDF collections into clean, searchable text while preserving valuable document information.<br>
 
 The parser can also save extracted images and vector drawings as separate files. Using an external application (eg: small VL model like LFM25), these images and drawings can be automatically described, and the generated descriptions can then be injected back into the main extracted text file. This creates enriched, AI-ready documents that combine the original PDF text with meaningful descriptions of visual content, making them ideal for search, indexing, accessibility, and retrieval-augmented generation (RAG) workflows. </b><br><br>
@@ -18,7 +19,7 @@ Check the PDF before converting it to text: go to any page, ideally one at the b
 # <b>PDF to TXT converter ready to chunk for your RAG</b>
 <b>EXE- ONLY WINDOWS</b><br>
 <b>PY available (en), should be run everywhere</b><br>
-exe files aviable on hugging (or relases -> right side): <br>
+exe files available on hugging (or releases -> right side): <br>
 https://huggingface.co/kalle07/pdf2txt_parser_converter
 <br>
 
