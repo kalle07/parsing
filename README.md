@@ -68,6 +68,7 @@ Margin & Overlap Protection:<br>
 
 Post-Processing Mode:<br>
 • First: describe all images and drawings oc with help of Ai (Suggestion: LFM2.5-VL-1.6B)<br>
+-> example approach: lfm25_image_describe.py<br>
 • This second pass reads existing text files with-in pdf media-folder same name as the PDF and injects a description field alongside each image/drawing JSON block.<br>
 example: testfile_page_0003_img_02.png -> testfile_page_0003_img_02.txt<br><br>
 
