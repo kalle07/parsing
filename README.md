@@ -23,7 +23,7 @@ exe files available on hugging (or releases -> right side): <br>
 https://huggingface.co/kalle07/pdf2txt_parser_converter
 <br>
 
-<b>&#x21e8;</b> give me a ❤️, if you like  ;)<br><br>
+<b>&#x21e8;</b> give me a ❤️ or ⭐, if you like  ;)<br><br>
 
 newest: <b>PDF Parser by Kall07 </b>
 <br>
