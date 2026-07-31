@@ -12,6 +12,8 @@ Check the PDF before converting it to text: go to any page, ideally one at the b
 • Two common types of tables are converted to JSON format (embedder readable)<br>
 • Older TXT and images files will be overwritten without prompting.<br>
 • When selecting a folder, all .pdf files inside it (non-hidden) are processed.<br>
+• Instant text preview<br>
+• Progress bar<br>
 
 # <b>PDF to TXT converter ready to chunk for your RAG</b>
 <b>EXE- ONLY WINDOWS</b><br>
