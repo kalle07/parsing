@@ -114,7 +114,5 @@ my embedder collection:<br>
 https://huggingface.co/kalle07/embedder_collection
 <br>
 <br>
-**Latest release (V8a)** – [PDFParser-by-kalle07.exe](https://github.com/kalle07/pdf2txt-parser/releases/download/V8a/PDFParser-by-kalle07.exe)  
-[![GitHub Downloads (latest)](https://img.shields.io/github/downloads/kalle07/pdf2txt-parser/latest?label=latest%20release%20downloads&color=green)](https://github.com/kalle07/pdf2txt-parser/releases/latest)
-<br>
+
 I am not responsible for any errors or crashes on your system. If you use it, you take full responsibility!
