@@ -1,0 +1,78 @@
+name: Update Download Counter
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-download-counter
+  cancel-in-progress: true
+
+jobs:
+  update-counter:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Get download count
+        id: count
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          ASSET_NAME="PDFParser-by-kalle07.exe"
+
+          RELEASE_JSON=$(curl -fsSL \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/releases/latest")
+
+          ASSET_ID=$(echo "$RELEASE_JSON" | jq -r --arg name "$ASSET_NAME" '.assets[] | select(.name == $name) | .id' | head -n 1)
+
+          if [ -z "$ASSET_ID" ] || [ "$ASSET_ID" = "null" ]; then
+            echo "Asset not found: $ASSET_NAME"
+            exit 1
+          fi
+
+          DOWNLOAD_COUNT=$(curl -fsSL \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/releases/assets/$ASSET_ID" \
+            | jq -r '.download_count')
+
+          echo "count=$DOWNLOAD_COUNT" >> "$GITHUB_OUTPUT"
+
+      - name: Update README
+        run: |
+          set -euo pipefail
+
+          RAW_COUNT="${{ steps.count.outputs.count }}"
+          COUNT=$(printf "%03d" "$RAW_COUNT")
+
+          sed -i -E \
+            's/(<!--download-count-->)[0-9]+(<!--\/download-count-->)/\1'"$COUNT"'\2/' \
+            README.md
+
+      - name: Commit changes
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add README.md
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "docs: update download counter to ${{ steps.count.outputs.count }}"
+          git push
