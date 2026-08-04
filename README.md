@@ -91,10 +91,11 @@ When processing large amounts of data, the following should be noted:<br>
 6. Speed: 8 cores  ~50 pages / sec<br><br>
 
 ...<br>
-https://github.com/kalle07/pdf2txt-parser<br><br>
+<br>
+📥 Downloads: <!--download-count-->000<!--/download-count-->
 
 
-
+<br>
 <br>
 This I have created with my brain and the help of Ai, Iam not a coder... sorry so I will not fulfill any wishes unless there are real errors.<br>
 It is really hard for me with GUI and the Function and in addition to compile it.<br>
