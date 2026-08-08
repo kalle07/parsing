@@ -690,6 +690,14 @@ class PageProcessor:
             # if should_skip:
             #     continue
 
+            text = text.replace("\u00ad", "")  # SOFT HYPHEN
+            text = text.replace("\u200b", "") # Remove zero-width space
+            text = text.replace("\u2009", " ") # Normalize thin space to regular space
+            text = text.replace("\u00a0", " ") # NBSP Non-breaking space
+            text = text.replace("\u2002", " ") # ENSP En space
+            text = text.replace("\u200a", " ") # HAIR SPACE            
+
+        
             # ---- Hyphen‑fix (optional) -----------------------------------------
             if self.config.hyphen_fix_enabled:
                 fixed_text, fix_count = fix_hyphenated_lines(text)
