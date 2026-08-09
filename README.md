@@ -20,10 +20,8 @@ Check the PDF before converting it to text: go to any page, ideally one at the b
 • Progress bar<br>
 
 # <b>PDF to TXT converter ready to chunk for your RAG</b>
-<b>EXE- ONLY WINDOWS</b><br>
-<b>PY available (en), should be run everywhere</b><br>
-exe files available on hugging (or releases -> right side): <br>
-https://huggingface.co/kalle07/pdf2txt_parser_converter
+<b>EXE - ONLY WINDOWS</b><br>
+<b>python install available, should be run everywhere</b><br>
 <br>
 
 <b>&#x21e8;</b> give me a ❤️ or ⭐, if you like  ;)<br><br>
