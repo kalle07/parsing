@@ -663,32 +663,31 @@ class PageProcessor:
             if not text.strip():
                 continue
 
-            # ---- Duplicate‑block filter (inside tables or heavily overlapping) --
-            # DISABLED: this filter was causing entire mid-page sections to be
-            # silently dropped when PyMuPDF's find_tables() produced false-positive
-            # table bboxes that overlapped with normal text blocks.
-            # should_skip = False
-            # for tx0, ty0, tx1, ty1 in reference_bboxes["tables"]:
-            #     table_bbox = BoundingBox.from_tuple((tx0, ty0, tx1, ty1))
-            #     inside_table = (
-            #         block_bbox.x0 >= table_bbox.x0
-            #         and block_bbox.y0 >= table_bbox.y0
-            #         and block_bbox.x1 <= table_bbox.x1
-            #         and block_bbox.y1 <= table_bbox.y1
-            #     )
-            #     if inside_table:
-            #         should_skip = True
-            #         break
-            #
-            #     overlap_pct, _, has_overlap = calculate_bbox_overlap(block_bbox, table_bbox)
-            #     if has_overlap and overlap_pct > 0.9:
-            #         max_area = max(table_bbox.area, block_bbox.area)
-            #         size_diff = abs(block_bbox.area - table_bbox.area) / max_area if max_area > 0 else 1
-            #         if size_diff <= 0.2:
-            #             should_skip = True
-            #
-            # if should_skip:
-            #     continue
+            # TABLE PRIORITY CHECKS (Tables take precedence over text blocks)
+            should_skip = False
+            
+            for tx0, ty0, tx1, ty1 in reference_bboxes['tables']:
+                table_bbox = BoundingBox.from_tuple((tx0, ty0, tx1, ty1))
+                
+                # CHECK 1: Text block completely contained within table area
+                if (block_bbox.x0 >= table_bbox.x0 and 
+                    block_bbox.y0 >= table_bbox.y0 and 
+                    block_bbox.x1 <= table_bbox.x1 and 
+                    block_bbox.y1 <= table_bbox.y1):
+                    should_skip = True
+                    break
+                
+                # CHECK 2: High overlap with similar size (existing logic, enhanced)
+                overlap_pct, _, has_overlap = calculate_bbox_overlap(block_bbox, table_bbox)
+                
+                if has_overlap and overlap_pct > 0.9:
+                    if max(table_bbox.area, block_bbox.area) > 0:
+                        size_diff = abs(block_bbox.area - table_bbox.area) / max(table_bbox.area, block_bbox.area)
+                        if size_diff <= 0.2:
+                            should_skip = True                    
+            
+            if should_skip:
+                continue
 
             text = text.replace("\u00ad", "")  # SOFT HYPHEN
             text = text.replace("\u200b", "") # Remove zero-width space
