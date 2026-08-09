@@ -240,6 +240,9 @@ When processing large amounts of data, the following should be noted:
 5. Results from all workers are collected and assembled in original page order before writing the final TXT file.
 6. Speed: 8 cores  ~50 pages / sec
 
+...
+https://github.com/kalle07/pdf2txt-parser
+
 """
 
 
@@ -337,7 +340,7 @@ class PDFParserFrame(wx.Frame):
     def __init__(self) -> None:
         super().__init__(
             parent=None,
-            title="PDF Parser",
+            title="PDF Parser by Kalle07",
             size=(960, 720),
             style=wx.DEFAULT_FRAME_STYLE,
         )
