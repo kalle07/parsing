@@ -102,7 +102,8 @@ It is really hard for me with GUI and the Function and in addition to compile it
 For the python-file oc you need to import missing libraries.<br>
 <br><br>
 
-# INSTALL - (download exe) or
+# INSTALL
+download exe no install, direct working App<br>
 python -m venv venv<br>
 venv\Scripts\activate  # On Windows<br>
 pip install -r requirements.txt<br>
