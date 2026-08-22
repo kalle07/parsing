@@ -109,7 +109,6 @@ python main.py<br><br>
 
 
 <b>now have fun and leave a comment if you like  ;)</b><br>
-on discord "sevenof9"
 <br>
 my raw-txt-snippet extractor<br>
 https://github.com/kalle07/raw-txt-snippet-creator<br>
